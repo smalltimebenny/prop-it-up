@@ -11,17 +11,27 @@
 
 // export default PersonCard;
 
-import React from "react";
+import React, {useState} from "react";
 const PersonCard = (props) => {
     const {firstName, lastName, age, hairColor} = props;
+    const [givenAge, setGivenAge] = useState(age)
+
     return(
-        <>
+        <div>
             <h1>{lastName}, {firstName}</h1>
-            <p>Age: {age}</p>
+            <p>Age: {givenAge}</p>
             <p>Hair color: {hairColor}</p>
-        </>
-        
+            <button onClick = {(event) => setGivenAge(givenAge + 1)}>Get older</button>
+        </div>
     )
+    
 }
 
+
+
+
+
+
+
 export default PersonCard;
+
